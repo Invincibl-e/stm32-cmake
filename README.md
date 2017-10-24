@@ -14,13 +14,13 @@ cmake -DSTM32_MODEL=<your chip model> -DCMAKE_TOOLCHAIN_FILE=<path_to_STM32.cmak
 and add `${STM32_INCLUDE}` `${STM32_SOURCE_FILES}` to your CMakeLists.txt. Maybe your need to link with `${STM32_LIBRARY}`
 
 
-* `STM32_MODEL` - Must. eg. STM32F411CE ( Only 12 )
-* `CMAKE_TOOLCHAIN_FILE` - Must. `${stm32-cmake_PATH}/Modules/STM32.cmake`
-* `TOOLCHAIN_PREFIX` - default: `arm-none-eabi`
-* `STM32Cube_DIR` - Set the STM32Cube repository directory. default: `~/STM32Cube/Repository/`
-* `STM32Cube_VERSION` - Set the STM32Cube firmware version `${STM32Cube_DIR}/STM32Cube_FW_${STM32_SERIES}_V${STM32Cube_VERSION}`
-* `STM32_CUSTOM_SYSCALL` - If `ON`, will generate a syscalls.c to your ${PROJECT_SOURCE_DIR}. default: `OFF`
-* `STM32_LINKER_SCRIPT` - You can custom the link script template. default: `${stm32-cmake_PATH}/Modules/STM32/${STM32_SERIES}/ldscript.template`
+* `STM32_MODEL` - Must. eg. STM32F411CE ( Only 12 ).
+* `CMAKE_TOOLCHAIN_FILE` - Must. `${stm32-cmake_PATH}/Modules/STM32.cmake`.
+* `TOOLCHAIN_PREFIX` - default: `arm-none-eabi`.
+* `STM32Cube_DIR` - Set the STM32Cube repository directory. default: `~/STM32Cube/Repository/`.
+* `STM32Cube_VERSION` - Set the STM32Cube firmware version. default: latest. eg. `${STM32Cube_DIR}/STM32Cube_FW_${STM32_SERIES}_V${STM32Cube_VERSION}`
+* `STM32_CUSTOM_SYSCALL` - If `ON`, will generate a syscalls.c to your ${PROJECT_SOURCE_DIR}. default: `OFF`.
+* `STM32_LINKER_SCRIPT` - You can custom the link script template. default: `${stm32-cmake_PATH}/Modules/STM32/${STM32_SERIES}/ldscript.template`.
 
 ## Add chip support
 Now, Only supports one chip. but you can add a support for your chip.

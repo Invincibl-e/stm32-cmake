@@ -30,14 +30,14 @@ Now, Only supports one chip. but you can add a support for your chip.
 │   ├── FindSTM32Cube.cmake
 │   ├── FindSTM32HAL.cmake
 │   ├── STM32
-│   │   ├── F4                                         #F4 series.
+│   │   ├── F4                     #F4 series.
 │   │   │   ├── STM32F411CE.cmake  #Chip model ( One to one ).
-│   │   │   ├── cmake.cmake                #F4 cmake.
-│   │   │   └── ldscript.template          #F4 link script template.
+│   │   │   ├── cmake.cmake        #F4 cmake.
+│   │   │   └── ldscript.template  #F4 link script template.
 │   │   ├── Linker.cmake
 │   │   ├── Util.cmake
 │   │   └── syscalls.c
-│   └── STM32.cmake                            #Main cmake.
+│   └── STM32.cmake                #Main cmake.
 ```
 
 If you use the F4 series chip, you only need copy `STM32F411CE.cmake` and change some parameters.

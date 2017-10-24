@@ -51,4 +51,4 @@ If you use the F4 series chip, you only need copy `STM32F411CE.cmake` and change
 
 Finally, push it!!! Thanks!
 
-If you don't use F4 series chip, you can copy Modules/F4/cmake.cmake and change some parameters too. But I think you can take a issues and tell me the parameters. Then I will dot it.
+If you don't use F4 series chip, you can copy Modules/F4/cmake.cmake and change some parameters too. But I think you can take a issues and tell me the parameters. Then I will do it.

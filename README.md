@@ -23,13 +23,17 @@ and add `${STM32_INCLUDE}` `${STM32_SOURCE_FILES}` to your CMakeLists.txt. Maybe
 * `STM32_LINKER_SCRIPT` - You can custom the link script template. default: `${stm32-cmake_PATH}/Modules/STM32/${STM32_SERIES}/ldscript.template`.
 
 ## Add chip support
-Now, Only supports one chip. but you can add a support for your chip.
+Now, Only supports two chip. but you can add a support for your chip.
 ```
 ├── Modules
 │   ├── FindCMSIS.cmake
 │   ├── FindSTM32Cube.cmake
 │   ├── FindSTM32HAL.cmake
 │   ├── STM32
+│   │   ├── F1                     #F1 series.
+│   │   │   ├── STM32F103C8.cmake  #Chip model ( One to one ).
+│   │   │   ├── cmake.cmake        #F1 cmake.
+│   │   │   └── ldscript.template  #F1 link script template.
 │   │   ├── F4                     #F4 series.
 │   │   │   ├── STM32F411CE.cmake  #Chip model ( One to one ).
 │   │   │   ├── cmake.cmake        #F4 cmake.
@@ -40,7 +44,7 @@ Now, Only supports one chip. but you can add a support for your chip.
 │   └── STM32.cmake                #Main cmake.
 ```
 
-If you use the F4 series chip, you only need copy `STM32F411CE.cmake` and change some parameters.
+If you use the F1 or F4 series chip, you only need copy `STM32F103C8` or `STM32F411CE.cmake` and change some parameters.
 * `add_definitions ( -DSTM32F411xE )` - Set chip marco.
 * `STM32_RAM_START_ADDRESS` - Chip ram start address.
 * `STM32_ROM_START_ADDRESS` - Chip rom start address.
@@ -51,4 +55,4 @@ If you use the F4 series chip, you only need copy `STM32F411CE.cmake` and change
 
 Finally, push it!!! Thanks!
 
-If you don't use F4 series chip, you can copy Modules/F4/cmake.cmake and change some parameters too. But I think you can take a issues and tell me the parameters. Then I will do it.
+If you don't use F1 or F4 series chip, you can copy Modules/F4/cmake.cmake and change some parameters too. But I think you can take a issues and tell me the parameters. Then I will do it.

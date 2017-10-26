@@ -31,7 +31,7 @@ stm32_add_flags ( CMAKE_EXE_LINKER_FLAGS
 				  "-mthumb"
 				  "-mcpu=cortex-m3"
 				  "-mfloat-abi=soft"
-				  "-T${PROJECT_SOURCE_DIR}/link_script.ld"
+				  "-T\"${PROJECT_SOURCE_DIR}/link_script.ld\""
 				  )
 
 add_definitions ( -DSTM32F1 )

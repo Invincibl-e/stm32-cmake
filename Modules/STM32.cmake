@@ -48,7 +48,7 @@ if ( CMAKE_TOOLCHAIN_FILE )
 		message ( FATAL_ERROR "The ${STM32_SERIES} series not support." "You can write and send to me." )
 	endif ( IS_DIRECTORY ${STM32_CMAKE_PATH}/STM32/${STM32_SERIES} )
 
-	if ( NOT DEFINED STM32_STDLIB )
+	if ( NOT DEFINED ${STM32_STDLIB} )
 		stm32_add_flags ( CMAKE_EXE_LINKER_FLAGS "--specs=nosys.specs" )
 	else ()
 		if ( NOT EXISTS ${PROJECT_SOURCE_DIR}/syscalls.c )

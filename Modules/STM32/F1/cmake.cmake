@@ -57,7 +57,7 @@ if ( ${STM32Cube_FOUND} AND ${CMSIS_FOUND} )
 
 	if ( NOT EXISTS ${PROJECT_SOURCE_DIR}/system_stm32.c )
 		stm32_find ( STM32_SYSTEM_SOURCE
-					 "${STM32Cube}/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c"
+					 "${STM32Cube}/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f1xx.c"
 					 )
 		configure_file ( ${STM32_SYSTEM_SOURCE} ${PROJECT_SOURCE_DIR}/system_stm32.c COPYONLY )
 		message ( STATUS "Copy ${STM32_SYSTEM_SOURCE} to your project, you can custom." )

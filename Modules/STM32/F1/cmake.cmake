@@ -52,7 +52,7 @@ if ( ${STM32Cube_FOUND} AND ${CMSIS_FOUND} )
 					 "${STM32Cube}/Drivers/CMSIS/Device/ST/STM32${STM32_SERIES}xx/Source/Templates/gcc/${STM32_STARTUP_SOURCE_NAME}"
 					 )
 		configure_file ( ${STM32_STARTUP_SOURCE} ${PROJECT_SOURCE_DIR}/startup.s COPYONLY )
-		message ( STATUS "Copy ${STM32_STARTUP_SOURCE} to your project, you can custom." )
+		message ( STATUS "Copy ${STM32_STARTUP_SOURCE} to your project, you can customize." )
 	endif ()
 
 	if ( NOT EXISTS ${PROJECT_SOURCE_DIR}/system_stm32.c )
@@ -60,7 +60,7 @@ if ( ${STM32Cube_FOUND} AND ${CMSIS_FOUND} )
 					 "${STM32Cube}/Drivers/CMSIS/Device/ST/STM32${STM32_SERIES}xx/Source/Templates/system_stm32${STM32_SERIES_LOWERCASE}xx.c"
 					 )
 		configure_file ( ${STM32_SYSTEM_SOURCE} ${PROJECT_SOURCE_DIR}/system_stm32.c COPYONLY )
-		message ( STATUS "Copy ${STM32_SYSTEM_SOURCE} to your project, you can custom." )
+		message ( STATUS "Copy ${STM32_SYSTEM_SOURCE} to your project, you can customize." )
 	endif ()
 	set ( STM32_SOURCE_FILES ${STM32_SOURCE_FILES} ${PROJECT_SOURCE_DIR}/startup.s ${PROJECT_SOURCE_DIR}/system_stm32.c )
 	set ( STM32_LIBRARY ${CMSIS_LIBRARY} )

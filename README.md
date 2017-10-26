@@ -19,7 +19,7 @@ and add `${STM32_INCLUDE}` `${STM32_SOURCE_FILES}` to your CMakeLists.txt. Maybe
 * `TOOLCHAIN_PREFIX` - default: `arm-none-eabi`.
 * `STM32Cube_DIR` - Set the STM32Cube repository directory. default: `~/STM32Cube/Repository/`.
 * `STM32Cube_VERSION` - Set the STM32Cube firmware version. default: latest. eg. `${STM32Cube_DIR}/STM32Cube_FW_${STM32_SERIES}_V${STM32Cube_VERSION}`
-* `STM32_CUSTOM_SYSCALL` - If `ON`, will generate a syscalls.c to your ${PROJECT_SOURCE_DIR}. default: `OFF`.
+* `STM32_STDLIB` - If `CUSTOM`, will generate a syscalls.c to your ${PROJECT_SOURCE_DIR}. default: `--specs=nosys.specs`.( [Documentation](https://launchpadlibrarian.net/287100883/readme.txt) )
 * `STM32_LINKER_SCRIPT` - You can custom the link script template. default: `${stm32-cmake_PATH}/Modules/STM32/${STM32_SERIES}/ldscript.template`.
 
 ## Add chip support

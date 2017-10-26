@@ -48,7 +48,7 @@ endif ( EXISTS ${STM32_CMAKE_PATH}/STM32/${STM32_SERIES}/${STM32_MODEL}.cmake )
 find_package ( STM32Cube )
 find_package ( CMSIS )
 if ( ${STM32Cube_FOUND} AND ${CMSIS_FOUND} )
-	stm32_find ( STM32_INCLUDE "${STM32Cube}/Drivers/CMSIS/Device/ST/STM32${STM32_SERIES}xx/Include/stm32f4xx.h" DIRECTORY )
+	stm32_find ( STM32_INCLUDE "${STM32Cube}/Drivers/CMSIS/Device/ST/STM32${STM32_SERIES}xx/Include/stm32${STM32_SERIES_LOWERCASE}xx.h" DIRECTORY )
 	set ( STM32_INCLUDE ${STM32_INCLUDE} ${CMSIS_INCLUDE} )
 	if ( NOT EXISTS ${PROJECT_SOURCE_DIR}/startup.s )
 		stm32_find ( STM32_STARTUP_SOURCE
@@ -60,7 +60,7 @@ if ( ${STM32Cube_FOUND} AND ${CMSIS_FOUND} )
 
 	if ( NOT EXISTS ${PROJECT_SOURCE_DIR}/system_stm32.c )
 		stm32_find ( STM32_SYSTEM_SOURCE
-					 "${STM32Cube}/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c"
+					 "${STM32Cube}/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32${STM32_SERIES_LOWERCASE}xx.c"
 					 )
 		configure_file ( ${STM32_SYSTEM_SOURCE} ${PROJECT_SOURCE_DIR}/system_stm32.c COPYONLY )
 		message ( STATUS "Copy ${STM32_SYSTEM_SOURCE} to your project, you can custom." )

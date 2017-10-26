@@ -15,8 +15,6 @@ set ( CMAKE_ASM_FLAGS "" )
 set ( CMAKE_EXE_LINKER_FLAGS "" )
 
 if ( CMAKE_TOOLCHAIN_FILE )
-	set ( STM32_SUPPORTED_FAMILIES L0 F0 F1 F2 F3 F4 F7 )
-
 	if ( DEFINED STM32_MODEL )
 		string ( TOUPPER "${STM32_MODEL}" STM32_MODEL )
 		set ( STM32_MODEL "${STM32_MODEL}" )
@@ -24,15 +22,9 @@ if ( CMAKE_TOOLCHAIN_FILE )
 		message ( FATAL_ERROR "Please use -DSTM32_MODEL to set the chip model." )
 	endif ( DEFINED STM32_MODEL )
 
-	if ( NOT DEFINED STM32_SERIES )
-		string ( SUBSTRING ${STM32_MODEL} 5 2 STM32_SERIES )
-		message ( STATUS "No STM32_SERIES specified, auto detect: " ${STM32_SERIES} )
-	endif ()
-
-	list ( FIND STM32_SUPPORTED_FAMILIES "${STM32_SERIES}" FAMILY_INDEX )
-	if ( FAMILY_INDEX EQUAL -1 )
-		message ( FATAL_ERROR "Unsupported STM32 family: ${STM32_SERIES}" )
-	endif ()
+	string ( SUBSTRING ${STM32_MODEL} 5 2 STM32_SERIES )
+	string ( TOLOWER "${STM32_SERIES}" STM32_SERIES_LOWERCASE )
+	message ( STATUS "No STM32_SERIES specified, auto detect: " ${STM32_SERIES} )
 
 	if ( NOT DEFINED TOOLCHAIN_PREFIX )
 		set ( TOOLCHAIN_PREFIX "arm-none-eabi" )

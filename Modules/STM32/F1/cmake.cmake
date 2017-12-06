@@ -39,7 +39,7 @@ add_definitions ( -DSTM32F1 )
 if ( EXISTS ${STM32_CMAKE_PATH}/STM32/${STM32_SERIES}/${STM32_MODEL}.cmake )
 	include ( STM32/${STM32_SERIES}/${STM32_MODEL} )
 else ( EXISTS ${STM32_CMAKE_PATH}/STM32/${STM32_SERIES}/${STM32_MODEL}.cmake )
-	message ( FATAL_ERROR "The ${STM32_MODEL} not support. You can write and send to me." )
+	message ( FATAL_ERROR "The ${STM32_MODEL} not support. You can write and send to me. https://github.com/I-n-v-i-n-c-i-b-l-e/stm32-cmake/blob/master/README.md#add-chip-support" )
 endif ( EXISTS ${STM32_CMAKE_PATH}/STM32/${STM32_SERIES}/${STM32_MODEL}.cmake )
 
 find_package ( STM32Cube )

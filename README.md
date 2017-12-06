@@ -29,14 +29,14 @@ and add `${STM32_INCLUDE}` `${STM32_SOURCE_FILES}` to your CMakeLists.txt. Maybe
 ### find package tool
 Now, I only completed one find_package for stm32. In the future, I will write more find_package for stm32.
 
->**warning**
+>⚠️
 >
 >You must use the stm32 cmake tool first, then can use these find_package.
 
 ```cmake
 find_package ( STM32LL COMPONENTS gpio REQUIRED )
 ```
-The ${STM32LL_FOUND} ${STM32LL_INCLUDE} and ${STM32LL_STM32LL_SOURCE_FILES} will be created, just add the to
+The `${STM32LL_FOUND}` `${STM32LL_INCLUDE}` and `${STM32LL_STM32LL_SOURCE_FILES}` will be created, just add to
 ```cmake
 include_directories (
 	${STM32_INCLUDE}

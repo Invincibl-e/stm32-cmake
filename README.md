@@ -27,10 +27,10 @@ Now, Only supports five chip. but you can add a support for your chip.
 
 Support List | Cmake Script
 :----: | :----:
-STM32F103C8  |[STM32F103C8.cmake](./Modules/F1/STM32F103C8.cmake)
-STM32F103VC  |[STM32F103VC.cmake](./Modules/F1/STM32F103VC.cmake)
-STM32F103ZE  |[STM32F103ZE.cmake](./Modules/F1/STM32F103ZE.cmake)
-STM32F411CE  |[STM32F411CE.cmake](./Modules/F1/STM32F411CE.cmake)
+STM32F103C8  |[STM32F103C8.cmake](./Modules/STM32/F1/STM32F103C8.cmake)
+STM32F103VC  |[STM32F103VC.cmake](./Modules/STM32/F1/STM32F103VC.cmake)
+STM32F103ZE  |[STM32F103ZE.cmake](./Modules/STM32/F1/STM32F103ZE.cmake)
+STM32F411CE  |[STM32F411CE.cmake](./Modules/STM32/F1/STM32F411CE.cmake)
 
 ```
 ├── Modules

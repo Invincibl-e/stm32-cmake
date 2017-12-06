@@ -1,4 +1,5 @@
 # stm32 cmake
+
 Use cmake to build your stm32 project!
 
 ## Requirements
@@ -6,6 +7,9 @@ Use cmake to build your stm32 project!
 * [STM32CubeMX](http://www.st.com/en/development-tools/stm32cubemx.html) ( You need to download the library for your chip )
 
 ## Usage
+
+### stm32 cmake tool
+
 You need to do :
 ```shell
 cmake -DSTM32_MODEL=<your chip model> -DCMAKE_TOOLCHAIN_FILE=<path_to_STM32.cmake> -DCMAKE_BUILD_TYPE=Debug <path_to_source_dir>
@@ -22,8 +26,28 @@ and add `${STM32_INCLUDE}` `${STM32_SOURCE_FILES}` to your CMakeLists.txt. Maybe
 * `STM32_CUSTOM_SYSCALL` - If `ON`, will generate a `syscalls.c` to your ${PROJECT_SOURCE_DIR}. default: `OFF`.( [Documentation](https://launchpadlibrarian.net/287100883/readme.txt) )
 * `STM32_LINKER_SCRIPT` - You can custom the link script template. default: `${stm32-cmake_PATH}/Modules/STM32/${STM32_SERIES}/ldscript.template`.
 
+### find package tool
+Now, I only completed one find_package for stm32. In the future, I will write more find_package for stm32.
+
+>**warning**
+>
+>You must use the stm32 cmake tool first, then can use these find_package.
+
+```cmake
+find_package ( STM32LL COMPONENTS gpio REQUIRED )
+```
+The ${STM32LL_FOUND} ${STM32LL_INCLUDE} and ${STM32LL_STM32LL_SOURCE_FILES} will be created, just add the to
+```cmake
+include_directories (
+	${STM32_INCLUDE}
+	${STM32LL_INCLUDE}
+)
+add_executable ( ${TARGET_NAME} ${SOURCE_FILES} ${STM32_SOURCE_FILES} ${STM32LL_SOURCE_FILES} )
+```
+
+
 ## Add chip support
-Now, Only supports five chip. but you can add a support for your chip.
+Now, Only supports four chip. but you can add a support for your chip.
 
 Support List | Cmake Script
 :----: | :----:

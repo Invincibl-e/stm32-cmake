@@ -45,7 +45,7 @@ if ( CMAKE_TOOLCHAIN_FILE )
 	if ( IS_DIRECTORY ${STM32_CMAKE_PATH}/STM32/${STM32_SERIES} )
 		include ( STM32/${STM32_SERIES}/cmake )
 	else ( IS_DIRECTORY ${STM32_CMAKE_PATH}/STM32/${STM32_SERIES} )
-		message ( FATAL_ERROR "The ${STM32_SERIES} series not support." "You can write and send to me. https://github.com/I-n-v-i-n-c-i-b-l-e/stm32-cmake/blob/master/README.md#add-chip-support" )
+		message ( FATAL_ERROR "The ${STM32_SERIES} series not support." "You can write and send to me. https://github.com/Invincibl-e/stm32-cmake/blob/master/README.md#add-chip-support" )
 	endif ( IS_DIRECTORY ${STM32_CMAKE_PATH}/STM32/${STM32_SERIES} )
 
 	if ( ${STM32_CUSTOM_SYSCALL} )
